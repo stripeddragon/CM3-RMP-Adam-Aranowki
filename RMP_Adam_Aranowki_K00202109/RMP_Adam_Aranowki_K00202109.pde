@@ -9,11 +9,15 @@ void draw(){
   background(122);
   fill(255,0,0);
   for(int r=0; r<20;r++){
-    for(int col=0;col<3;col++){
-      allCircles[r][col] = random(height - 30);
-      allCircles[r][col]= random(width - 30);
-      allCircles[r][col] = random(10, 50);
-      ellipse(allCircles[r][col], allCircles[r][col],allCircles[r][col], allCircles[r][col]);
-    }
+    
+      float circleSize = random(10, 50);
+      float circleY = random(width);
+      float circleX = random(height);
+      
+      allCircles[r][0] = circleSize ; 
+      allCircles[r][1] = circleY ; 
+      allCircles[r][2] = circleX ;
+      
+      ellipse(allCircles[r][0], allCircles[r][0],allCircles[r][1], allCircles[r][2]);   
+     }
   }
-}
