@@ -5,11 +5,13 @@ boolean downKeyPress = false ;
 boolean leftKeyPress = false ;
 boolean rightKeyPress = false ;
 
-int mousePositionX;
-int mousePositionY;
+//int mousePositionX;
+//int mousePositionY;
 
+
+Face scaryStuff;
 void setup(){
-
+ scaryStuff = new Face();
   size(400,400);
 
 for(int r=0; r<20;r++){
@@ -34,13 +36,14 @@ for(int r=0; r<20;r++){
 }
 
 void draw(){
-  
-  mousePositionX = mouseX ;
-  mousePositionY = mouseY ;
+  scaryStuff.x = mouseX;
+  scaryStuff.y = mouseY;
+ // mousePositionX = mouseX ;
+  //mousePositionY = mouseY ;
   
   background(122);
   
-  ellipse(mousePositionX,mousePositionY,50,50);
+ // ellipse(mousePositionX,mousePositionY,50,50);
   for(int r=0; r<20;r++){
     
     fill(allCircles[r][3],allCircles[r][4],allCircles[r][5]); 
@@ -95,5 +98,5 @@ void draw(){
        }
 
     }
-
+  scaryStuff.display();
 }
